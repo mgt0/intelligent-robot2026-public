@@ -1,0 +1,12 @@
+# slam_toolbox async 노드. 키 이름은 slam_toolbox 기본 설정 기준. # 확인 필요
+slam_toolbox:
+  ros__parameters:
+    base_frame: base_link
+    odom_frame: odom
+    map_frame: map
+    scan_topic: /scan
+    mode: mapping               # localization은 launch의 map 인자로 덮어씀
+    map_file_name: ''           # serialize 파일 경로(확장자 없이). launch의 map 인자로 덮어씀
+    map_start_at_dock: true     # 지도 원점 = 출발 위치. localization 시작 자세. # 확인 필요
+    resolution: 0.02
+    max_laser_range: 6.0

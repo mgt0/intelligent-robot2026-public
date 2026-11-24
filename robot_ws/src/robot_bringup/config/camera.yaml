@@ -1,0 +1,9 @@
+# camera_ros (package camera_ros, executable camera_node). 노드 이름은 launch에서 camera로 지정.
+camera:
+  ros__parameters:
+    camera: 0
+    width: 640
+    height: 480
+    frame_id: camera_link
+    # 30fps 요청. 동적 파라미터라 카메라 모듈에 따라 이름·동작이 다를 수 있다. # 확인 필요
+    FrameDurationLimits: [33333, 33333]

@@ -1,0 +1,30 @@
+base_node:
+  ros__parameters:
+    port: /dev/openrb          # udev 등록 전에는 /dev/ttyACM0
+    baudrate: 1000000
+    left_id: 1
+    right_id: 2
+    left_sign: 1
+    right_sign: -1             # [확인 필요] 실차에서 바퀴 방향 확인
+    wheel_radius: 0.033        # m [가정] 실측 후 보정
+    wheel_base: 0.160          # m [가정] 실측 후 보정
+    max_linear: 0.30
+    max_angular: 2.0
+    cmd_timeout: 0.5
+    rate: 30.0
+    publish_tf: true
+    velocity_limit_raw: 265    # W1에 Wizard에서 읽은 Velocity Limit 값으로 교체
+    use_fake_hw: false
+
+# 센서 static TF (launch가 읽는다). 단위 m, rad. [가정] 실측 후 수정
+sensor_tf:
+  laser:
+    x: 0.05
+    y: 0.0
+    z: 0.12
+    yaw: 0.0
+  camera:
+    x: 0.08
+    y: 0.0
+    z: 0.15
+    pitch: 0.5                 # 아래를 향함

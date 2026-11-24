@@ -1,0 +1,43 @@
+drive_node:
+  ros__parameters:
+    v_max: 0.15
+    v_min_ratio: 0.4
+    k_slow: 0.6
+    kp: 1.8
+    kd: 0.15
+    search_angular: 0.8
+    line_lost_grace: 0.3
+    line_lost_timeout: 3.0
+    stop_hold_sec: 3.0          # [확인 필요] 대회 규정의 정지 시간
+    stop_cooldown_sec: 4.0
+    obstacle_dist: 0.30
+    obstacle_clear_dist: 0.40
+    front_half_angle: 0.35
+    scan_yaw_offset: 0.0
+    avoid_mode: stop            # stop 또는 bypass
+    bypass_turn_angle: 0.6
+    bypass_forward_dist: 0.25
+    avoid_timeout: 8.0
+    auto_start: false
+    auto_start_delay: 1.0       # 계획서에 값 없음 [가정]
+    rate: 20.0
+    use_slam: true              # false면 TF 조회·바퀴 수 판정 안 함
+    lap_radius: 0.25
+    lap_min_dist: 1.0
+    laps_to_finish: 0           # 0=끔. 대회 완주 조건 불명 [확인 필요]
+    slam_tf_timeout: 1.0
+
+follow_node:
+  ros__parameters:
+    kx: 1.5
+    kz: 1.2
+    target_size: 0.35
+    v_max: 0.20
+    hand_lost_timeout: 0.5
+    uturn_angular: 1.2
+    uturn_tolerance: 0.08
+    use_scan: true
+    obstacle_dist: 0.20
+    front_half_angle: 0.35
+    scan_yaw_offset: 0.0
+    rate: 20.0

@@ -1,0 +1,17 @@
+mode_manager:
+  ros__parameters:
+    default_mode: drive         # drive 또는 follow. 미션 노드는 IDLE로 시작
+    ros2_cmd: ros2
+    map_file: ''                # slam_toolbox 지도 경로(확장자 제외). 비면 mapping. GUI [지도 저장]도 이 값을 씀(/mission/map_file)
+
+gui:
+  ros__parameters:
+    display_fps: 10.0
+    stale_sec: 1.0
+    log_lines: 40
+    front_half_angle: 0.35      # mission.yaml과 같은 값(표시용)
+    obstacle_dist: 0.30
+    laps_to_finish: 0           # 0이면 바퀴 수 숫자만 표시
+    # compressed는 Pi에서 토픽마다 republish 필요:
+    #   ros2 run image_transport republish raw compressed --ros-args -r in:=<topic> -r out/compressed:=<topic>/compressed  (확인 필요)
+    image_transport: raw        # raw 또는 compressed

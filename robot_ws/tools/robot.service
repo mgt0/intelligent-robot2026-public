@@ -1,0 +1,17 @@
+# systemd 자동 시작 (W6). 설치:
+#   sudo cp tools/robot.service /etc/systemd/system/ && sudo systemctl daemon-reload
+#   sudo systemctl enable --now robot
+# User, 경로, ROS_DOMAIN_ID, 종목(drive/follow)을 실제 값으로 바꾼다. 확인 필요
+[Unit]
+Description=Robot bringup (drive)
+After=network.target
+
+[Service]
+User=ubuntu
+Environment=ROS_DOMAIN_ID=42
+ExecStart=/bin/bash -c 'source /opt/ros/jazzy/setup.bash && source /home/ubuntu/robot_ws/install/setup.bash && exec ros2 launch robot_bringup drive.launch.py'
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

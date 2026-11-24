@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.claude/
+.codex/
+CLAUDE.md
+AGENTS.md
+__pycache__/
+.pytest_cache/
+robot_ws/build/
+robot_ws/install/
+robot_ws/log/

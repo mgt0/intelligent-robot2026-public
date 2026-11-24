@@ -1,0 +1,9 @@
+# rplidar_ros (ros2 브랜치) rplidar_node. 파라미터 이름은 rplidar_a1_launch.py 기준.
+rplidar_node:
+  ros__parameters:
+    channel_type: serial
+    serial_port: /dev/rplidar
+    serial_baudrate: 115200
+    frame_id: laser
+    inverted: false
+    angle_compensate: true
